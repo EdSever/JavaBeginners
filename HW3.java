@@ -1,6 +1,5 @@
 package homework.JavaBeginners;
 
-import static java.lang.Byte.MAX_VALUE;
 
 public class HW3 {
 
@@ -24,7 +23,7 @@ public class HW3 {
 
         System.out.println("byte a = " + a);
         System.out.println("byte b = " + b);
-        System.out.println("Максимальное значение byte = " + MAX_VALUE);
+        System.out.println("Максимальное значение byte = " + Byte.MAX_VALUE);
         System.out.println("Минимальное значение byte = " + Byte.MIN_VALUE);
         System.out.println();
         System.out.println("------------------------------------------------" +
@@ -67,7 +66,7 @@ public class HW3 {
                 "---------------------------------------------------------");
 
         int number = 5338371;
-        int cityCode = 843;
+        short cityCode = 843;
         String kod = "+7";
         String parentheses1 = "(";
         String parentheses2 = ")";
@@ -178,13 +177,12 @@ public class HW3 {
         byte t1 = 0;
         short t2 = 150;
         byte t3 = -120;
-        double t4 = -505.505;
+        float t4 = -505.505F;
         int t5 = 100100;
         long t6 = 100010001000L;
         double t7 = 2.66666666666666;
         double t8 = - 1000000.001;
-        int t9 = 1010;
-
+        short t9 = 1010;
 
         System.out.println("t1 = " + t1);
         System.out.println("t2 = " + t2);
@@ -210,7 +208,7 @@ public class HW3 {
                 "\n----------------------------------------------------------" +
                 "----------------" +
                 "\n| byte   | 8            | " + Byte.MIN_VALUE + "          " +
-                "         | " + MAX_VALUE + "                    |" +
+                "         | " + Byte.MAX_VALUE + "                    |" +
                 "\n---------------------------------------------------------" +
                 "------------------" +
                 "\n| short  | 16           | " + Short.MIN_VALUE + "       " +
@@ -250,19 +248,15 @@ public class HW3 {
                 "методом .equal = …”\n");
         System.out.println();
 
-        int num1 = 10;
-        int num2 = 10;
-        boolean num3;
-        num3 = num1 == num2;
-        int num4 = 11;
-        boolean num5;
-        num5 = num4 == num2;
+        Integer num1 = 10;
+        Integer num2 = 10;
+        Integer num4 = 11;
 
         System.out.println("Если num1 = num2, то результат сравнения " +
-                "методом .equal = " + num3);
+                "методом .equal = " + num1.equals(num2));
         System.out.println();
         System.out.println("Если num1 не равно num2, то результат " +
-                "сравнения методом .equal = " + num5);
+                "сравнения методом .equal = " + num4.equals(num2));
         System.out.println();
         System.out.println("------------------------------------------------" +
                 "---------------------------------------------------------");
@@ -326,14 +320,16 @@ public class HW3 {
                 "---------------------------------------------------------");
 
         System.out.println("17. С помощью метода sum() класса Integer " +
-                "посчитать сумму двух переменных типа Integer.");
+                "посчитать сумму двух переменных типа Float.");
         System.out.println();
 
-        int in1 = 13;
-        int in2 = 17;
-        int in3 = Integer.sum(in1, in2);
+        float in1 = 13;
+        float in2 = 17;
+        int in3 = (int)in1;
+        int in4 = (int)in2;
+        int in5 = Integer.sum(in3, in4);
 
-        System.out.println(in3);
+        System.out.println(in5);
         System.out.println();
         System.out.println("------------------------------------------------" +
                 "---------------------------------------------------------");
@@ -356,10 +352,10 @@ public class HW3 {
         System.out.println("a) 12000 - 12300 = "
                 + Short.compare(short1, short2));
 
-        short short3 = 12500;
+        short1 = 12500;
 
         System.out.println("b) 12500 - 12300 = "
-                + Short.compare(short3, short2));
+                + Short.compare(short1, short2));
         System.out.println();
         System.out.println("------------------------------------------------" +
                 "---------------------------------------------------------");
@@ -380,10 +376,9 @@ public class HW3 {
         Double doub1 = 123.56;
         Double doub2 = 123.55;
         Double dou = doub1 - doub2;
-        String st12 = str1 + " - " + str2;
 
         System.out.println("doub1 - doub2 = " + dou);
-        System.out.println("str1 - str2 = " + st12);
+        System.out.println(Double.valueOf(str1) - Double.valueOf(str2));
         System.out.println();
         System.out.println("------------------------------------------------" +
                 "---------------------------------------------------------");
@@ -398,28 +393,80 @@ public class HW3 {
                 "тела кота.");
         System.out.println();
 
-        double kot1 = 37.5;
-        double kot2 = 39.5;
-        double kot3 = (kot1 + kot2) / 2;
-        long kot4 = Math.round(kot3);
+        double kot = 40.7;
+        kot = kot + 37.5;
+        kot = kot / 2;
+        long kot4 = Math.round(kot);
 
-        System.out.println("Максимальная температура кота = "
-                + Double.max(kot1, kot2) + " °C");
-        System.out.println("Минимальная температура кота = "
-                + Double.min(kot1, kot2) + " °C");
         System.out.println("Среднее значение температуры кота = "
                 + kot4 + " °C");
         System.out.println();
         System.out.println("------------------------------------------------" +
                 "---------------------------------------------------------");
 
+        System.out.println("21. Создать переменную n типа Number, " +
+                "присвоить ей максимально возможное значение. \n" +
+                "Присвоить n значение 10, \n" +
+                "затем присвоить n значение 10.999999999.\n" +
+                "\n" +
+                "Распечатать результаты в виде выражения:\n" +
+                "“Переменная n может принимать значения: \n" +
+                " n =  …\n" +
+                " n =  …\n" +
+                " n =  …\n" +
+                " Это возможно, потому что …”\n");
+        System.out.println();
 
+        Number n = Double.MAX_VALUE;
+        n = 10;
+        n = 10.999999999;
 
+        System.out.println("n = " + Double.MAX_VALUE
+                + "\nn = " + n.intValue() + "\nn = " + n);
+        System.out.println();
+        System.out.println("------------------------------------------------" +
+                "---------------------------------------------------------");
 
+        System.out.println("22. Создать переменную Integer " +
+                "numberInteger = 100. Доказать, что numberInteger " +
+                "имеет тип Integer, \n" +
+                "а numberInteger.toString() имеет тип String.");
+        System.out.println();
 
+        Integer numberInteger = 100;
+        String numberInt = numberInteger.toString();
 
+        System.out.println("Имеет тип Integer Потому что число прибаыить " +
+                "число получится число = " + (numberInteger + 1000));
+        System.out.println("Тип String потому что число + " +
+                "текст получится текст = " + numberInt + 1000);
+        System.out.println(numberInteger.getClass());
+        System.out.println(numberInt.getClass());
+        System.out.println();
+        System.out.println("------------------------------------------------" +
+                "---------------------------------------------------------");
 
+        System.out.println("23. Вывести на экран следующие выражения, " +
+                "используя для печати только переменные:\n" +
+                "“36.6 градусов по Цельсию  = … градусов по Фаренгейту”," +
+                " где значение по Фаренгейту должно быть " +
+                "вычислено \nпо формуле \n“50 kilogram = … lbs,  50 lb = … kg”," +
+                " где значения должны быть вычислены по формулам");
+        System.out.println();
 
+        double gradC = 36.6;
+        double gradF = gradC * 1.8 + 32;
+        double kg = 50;
+        double lbs = kg * 2.205;
+        double lbs1 = 50;
+        double kg1 = lbs1 * 0.45359293319936;
 
+        System.out.println("6.6 градусов по Цельсию = " + gradF
+                + " градусов по Фаренгейту" + "\n50 kilogram = "
+                + lbs + " lbs, "
+                + "\n50 lb = " + kg1 + " kg");
+        System.out.println();
+        System.out.println("------------------------------------------------" +
+                "---------------------------------------------------------");
     }
 }
