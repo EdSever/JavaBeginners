@@ -135,6 +135,53 @@ public class HW4 {
         if ((andrei > sveta) && (natasha > sveta)) {
             System.out.println("Света младше Андрея и Наташи!");
         }
+        System.out.println("\n5б) На полке стоят учебники, а на столе " +
+                   "лежат справочники.\n");
+
+        String textbooks = "shelf";
+        String directory = "table";
+
+        if (textbooks.equals("shelf")) {
+            System.out.println("Учебники стоят на полке");
+        }
+        if (directory.equals("table")) {
+            System.out.println("Справочники лежат на столе");
+        }
+
+        System.out.println("\n5в) БОльшая часть детей — девочки. " +
+                "Остальные - мальчики.\n");
+
+        int children = 30;
+        int girls = 20;
+
+        if (children / 2 < girls) {
+            System.out.println("БОльшая часть детей — девочки");
+            int boys = children - girls;
+            System.out.println("Мальчиков = " + boys);
+        }
+
+        System.out.println(Tabulation);
+        System.out.println("6. Водительские права можно получить, " +
+                "только когда исполнится 16 лет.\n");
+
+        int prava = 16;
+        int voditel = 20;
+
+        if (voditel >= prava) {
+            System.out.println("Можно получить водительские права");
+        }
+        else {
+            System.out.println("Нельзя получить водительские права");
+        }
+
+        System.out.println(Tabulation);
+        System.out.println("7. Петя не едет в автобусе, но при этом " +
+                "читает книгу или не смотрит в окно\n");
+
+
+
+
+
 
 
 
